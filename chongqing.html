@@ -1,0 +1,2817 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>山城 - 手札</title>
+    <!-- 预加载关键资源 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+XiaoWei&family=ZCOOL+KuaiLe&family=ZCOOL+QingKe+HuangYou&family=ZCOOL+KuHei&family=Zhi+Mang+Xing&family=ZCOOL+Addict&display=swap" rel="stylesheet">
+    <style>
+        /* 使用系统字体作为后备 */
+        :root {
+            --font-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        /* 优化字体加载 */
+        @font-face {
+            font-family: 'FuLuLuxi';
+            src: local('FuLuLuxi'),
+                 url('assets/fonts/fulu-luxi-2.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'A131';
+            src: url('assets/fonts/A131-姥姥说媒小艾繁体.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        @font-face {
+            font-family: 'HuiwenMingchao';
+            src: url('assets/fonts/huiwenmingchaoti.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        @font-face {
+            font-family: 'Superwild';
+            src: url('assets/fonts/superwild-nax0j.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        @font-face {
+            font-family: 'Lenyah';
+            src: url('assets/fonts/lenyah-v4qye.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        @font-face {
+            font-family: 'Ma Shan Zheng';
+            src: url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Noto Serif SC';
+            src: url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Noto Sans SC';
+            src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'ZCOOL XiaoWei';
+            src: url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'ZCOOL KuaiLe';
+            src: url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'ZCOOL QingKe HuangYou';
+            src: url('https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'ZCOOL KuHei';
+            src: url('https://fonts.googleapis.com/css2?family=ZCOOL+KuHei&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Zhi Mang Xing';
+            src: url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'ZCOOL Addict';
+            src: url('https://fonts.googleapis.com/css2?family=ZCOOL+Addict&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'ZCOOL KuaiLe';
+            src: url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'ZCOOL Addict';
+            src: url('https://fonts.googleapis.com/css2?family=ZCOOL+Addict&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'ZCOOL KuHei';
+            src: url('https://fonts.googleapis.com/css2?family=ZCOOL+KuHei&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'ZCOOL XiaoWei';
+            src: url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'ZCOOL QingKe HuangYou';
+            src: url('https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Zhi Mang Xing';
+            src: url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Ma Shan Zheng';
+            src: url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Noto Serif SC';
+            src: url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Noto Sans SC';
+            src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+            font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root {
+            --text-color: #e0c0c0;
+            --red-glow: rgba(255, 0, 0, 0.4);
+            --red-border: rgba(180, 0, 0, 0.7);
+            --dark-red-bg: rgba(60, 10, 10, 0.8);
+            /* Light theme colors */
+            --light-bg: rgba(245, 240, 220, 0.85); /* Creamy */
+            --light-text: #443;
+            --light-border: rgba(180, 150, 90, 0.7);
+            --light-glow: rgba(255, 200, 100, 0.4);
+            --light-accent-bg: rgba(210, 180, 120, 0.8);
+            /* Deep blue semi-transparent background for inputs */
+            --deep-blue-bg: rgba(10, 20, 50, 0.7);
+            --deep-blue-border: rgba(30, 50, 100, 0.8);
+            --deep-blue-glow: rgba(50, 80, 150, 0.5);
+
+            --notebook-width: 95vw;
+            --notebook-height: 90vh;
+            --chinese-font: 'FuLuLuxi', serif;
+            --english-font: 'Superwild', serif;
+            --quote-font: 'HuiwenMingchao', serif;
+            --button-font: 'Lenyah', serif;
+        }
+
+        /* 视频背景样式 */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('assets/images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* 移动端特定背景 */
+        @media (max-width: 768px) {
+            .video-background {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/images/mobile-background.jpg');
+                background-position: center;
+                background-size: cover;
+            }
+        }
+
+        /* 确保背景图片在加载时有平滑过渡 */
+        .video-background {
+            transition: background-image 0.5s ease-in-out;
+        }
+
+        /* 优化移动端的整体视觉效果 */
+        @media (max-width: 768px) {
+            .notebook {
+                background: rgba(0, 0, 0, 0.6);
+            }
+            
+            .notebook-page {
+                background: rgba(10, 10, 15, 0.8);
+            }
+            
+            .controls-area {
+                background: rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        .video-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(255, 0, 111, 0.2), 
+                rgba(0, 255, 200, 0.2));
+            mix-blend-mode: color;
+            pointer-events: none;
+        }
+
+        .video-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.1) 0px,
+                rgba(0, 0, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            animation: scanlines 0.5s linear infinite;
+        }
+
+        @keyframes backgroundPulse {
+            0% { filter: saturate(1.3) contrast(1.1) brightness(1.2) hue-rotate(0deg); }
+            50% { filter: saturate(1.4) contrast(1.2) brightness(1.3) hue-rotate(10deg); }
+            100% { filter: saturate(1.3) contrast(1.1) brightness(1.2) hue-rotate(0deg); }
+        }
+
+        @keyframes scanlines {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(2px); }
+        }
+
+        body {
+            margin: 0;
+            padding: 10px;
+            min-height: 100vh;
+            background: transparent;
+            color: var(--text-color);
+            font-family: var(--chinese-font);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transition: background-color 0.5s ease-in-out;
+        }
+
+        /* Add 3D tilt effect to notebook */
+        .notebook {
+            width: var(--notebook-width);
+            max-width: 100%;
+            height: var(--notebook-height);
+            max-height: 100%;
+            background-color: rgba(10, 12, 18, 0.6);
+            border: 1px solid rgba(0, 255, 200, 0.3);
+            box-shadow: 0 0 20px rgba(0, 255, 200, 0.2),
+                       0 0 40px rgba(255, 0, 111, 0.15),
+                       inset 0 0 30px rgba(0, 255, 200, 0.1);
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: box-shadow 0.5s ease;
+        }
+
+        .notebook:hover {
+            box-shadow: 0 0 30px rgba(0, 255, 200, 0.3),
+                       0 0 60px rgba(255, 0, 111, 0.25),
+                       inset 0 0 40px rgba(0, 255, 200, 0.15);
+        }
+
+        /* Remove the problematic animation */
+        .notebook::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg,
+                rgba(0, 255, 200, 0.08),
+                rgba(255, 0, 111, 0.08));
+            pointer-events: none;
+        }
+
+        /* Remove the hologramSheen animation */
+        @keyframes hologramSheen {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            50% { transform: translateX(100%) translateY(100%); }
+            100% { transform: translateX(-100%) translateY(-100%); }
+        }
+
+        .notebook-inner {
+             position: relative;
+             width: 100%;
+             height: 100%;
+            transition: none;
+        }
+
+        .notebook.flipped .notebook-inner {
+            transform: none;
+        }
+
+        .notebook-page {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            transition: none;
+            pointer-events: auto;
+        }
+
+        .notebook-front {
+            background: linear-gradient(135deg,
+                rgba(10, 12, 18, 0.6) 0%,
+                rgba(20, 24, 36, 0.6) 100%);
+            border: 1px solid rgba(0, 255, 200, 0.2);
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .notebook.flipped .notebook-front {
+            display: none;
+        }
+
+        .notebook-back {
+            background: linear-gradient(135deg,
+                rgba(10, 12, 18, 0.6) 0%,
+                rgba(20, 24, 36, 0.6) 100%);
+            border: 1px solid rgba(255, 0, 111, 0.2);
+            z-index: 2;
+            display: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            font-size: 1.2em;
+            color: #aaa;
+            padding-top: 40px;
+        }
+
+        .notebook.flipped .notebook-back {
+            display: flex;
+        }
+
+        .next-page-arrow {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 50px;
+            height: 100vh;
+            background: linear-gradient(to right, transparent, rgba(240, 208, 208, 0.05));
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+            border: none;
+            outline: none;
+        }
+
+        .next-page-arrow.enabled {
+            opacity: 0.5;
+            pointer-events: auto;
+        }
+
+        .next-page-arrow:hover {
+            background: linear-gradient(to right, transparent, rgba(240, 208, 208, 0.15));
+            width: 60px;
+        }
+
+        .next-page-arrow::after {
+            content: '';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            border-top: 1px solid rgba(240, 208, 208, 0.3);
+            border-right: 1px solid rgba(240, 208, 208, 0.3);
+            transform: translateY(-50%) rotate(45deg);
+            transition: all 0.3s ease;
+        }
+
+        .next-page-arrow:hover::after {
+            right: 15px;
+            border-color: rgba(240, 208, 208, 0.5);
+        }
+
+        .controls-area {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: stretch;
+            border-radius: 4px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Add hover effect to input fields */
+        input[type="text"],
+        select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px 18px;
+            background: rgba(10, 20, 30, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.95);
+            border-radius: 3px;
+            font-size: 1.1em;
+            font-family: var(--quote-font) !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2),
+                       inset 0 0 5px rgba(0, 0, 0, 0.1);
+            outline: none;
+            flex-grow: 1;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transform: translateY(0);
+            position: relative;
+            overflow: hidden;
+        }
+
+        input[type="text"]::before,
+        select::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        input[type="text"]:hover::before,
+        select:hover::before {
+            left: 100%;
+        }
+
+        input[type="text"]:hover,
+        select:hover {
+            background: rgba(20, 30, 40, 0.35);
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.25),
+                       inset 0 0 8px rgba(0, 0, 0, 0.15);
+            transform: translateY(-1px);
+        }
+
+        input[type="text"]:active,
+        select:active {
+            transform: translateY(1px);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3),
+                       inset 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="text"]:focus,
+        select:focus {
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3),
+                       inset 0 0 8px rgba(0, 0, 0, 0.15);
+            background: rgba(10, 20, 30, 0.35);
+            transform: translateY(-1px);
+        }
+
+        select {
+            flex-grow: 0;
+            min-width: 180px;
+            appearance: none;
+            background: rgba(10, 20, 30, 0.4) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23f0d0d0" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>') no-repeat right 12px center;
+            background-size: 14px;
+        }
+
+        input[type="text"]::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+            opacity: 0.8;
+            font-family: var(--quote-font) !important;
+        }
+
+        select option[disabled] {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: var(--quote-font) !important;
+        }
+
+        select option {
+             background: #300505;
+             color: rgba(255, 255, 255, 1);
+             font-family: var(--quote-font) !important;
+        }
+
+        .revealed-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+            padding: 0;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 4px;
+            height: auto;
+            overflow: visible;
+        }
+
+        .images-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            margin-bottom: 15px;
+            background: transparent;
+        }
+
+        .movie-poster, .building-img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            background-color: transparent;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .movie-poster:hover, .building-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(0, 255, 200, 0.4);
+        }
+
+        /* Remove media queries for horizontal layout */
+        @media (min-width: 768px) {
+            .movie-poster, .building-img {
+                max-height: 500px;
+            }
+        }
+
+        /* Remove special handling for vertical layout since all layouts are now vertical */
+        .images-container.vertical {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .images-container.vertical .movie-poster,
+        .images-container.vertical .building-img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            margin-bottom: 0;
+        }
+
+        .quote {
+            font-style: normal;
+            color: rgba(255, 255, 255, 1);
+            font-size: 1.5em;
+            line-height: 1.8;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.8),
+                         0 0 10px rgba(0, 255, 255, 0.5),
+                         0 0 15px rgba(255, 0, 111, 0.5),
+                         0 0 20px rgba(255, 0, 111, 0.3),
+                         0 0 25px rgba(255, 255, 255, 0.1);
+            margin: 0 0 30px 0;
+            padding: 25px;
+            background: rgba(10, 12, 18, 0.4);
+            border: 1px solid rgba(0, 255, 200, 0.3);
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            font-family: var(--quote-font);
+            letter-spacing: 3px;
+            order: -1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            box-sizing: border-box;
+            gap: 0.8em;
+            font-weight: 300;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 0 20px rgba(0, 255, 200, 0.2),
+                        inset 0 0 15px rgba(255, 0, 111, 0.15);
+            animation: quoteGlow 3s ease-in-out infinite alternate;
+            animation: float 6s ease-in-out infinite;
+            overflow: hidden; /* 添加溢出隐藏，防止粒子效果溢出 */
+        }
+
+        /* 添加粒子湮灭效果 */
+        .quote .chinese, .quote .english {
+            position: relative;
+        }
+
+        .quote .chinese::before, .quote .english::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, 
+                rgba(0, 255, 255, 0.2) 0%, 
+                rgba(255, 0, 111, 0.1) 30%, 
+                transparent 70%);
+            opacity: 0;
+            pointer-events: none;
+            animation: particleGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes particleGlow {
+            0%, 100% { opacity: 0; transform: scale(0.8); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        /* 添加文字粒子效果 */
+        .quote .chinese span, .quote .english span {
+            position: relative;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .quote .chinese span:hover, .quote .english span:hover {
+            transform: translateY(-2px);
+            text-shadow: 0 0 8px rgba(0, 255, 255, 1),
+                         0 0 15px rgba(0, 255, 255, 0.8),
+                         0 0 20px rgba(255, 0, 111, 0.8),
+                         0 0 25px rgba(255, 0, 111, 0.6),
+                         0 0 30px rgba(255, 255, 255, 0.4);
+        }
+
+        /* 添加粒子容器 */
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .text-particle {
+            position: absolute;
+            background: radial-gradient(circle, 
+                rgba(0, 255, 255, 0.8) 0%, 
+                rgba(255, 0, 111, 0.6) 50%, 
+                transparent 100%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particleFade 1.5s ease-out forwards;
+        }
+
+        @keyframes particleFade {
+            0% { 
+                transform: scale(0.5) translateY(0); 
+                opacity: 1; 
+            }
+            100% { 
+                transform: scale(1.5) translateY(-20px); 
+                opacity: 0; 
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .quote .chinese {
+            display: block;
+            text-align: center;
+            width: 100%;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-weight: 300;
+            letter-spacing: 5px;
+            color: rgba(255, 255, 255, 1);
+            font-family: var(--quote-font);
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.8),
+                         0 0 10px rgba(0, 255, 255, 0.5),
+                         0 0 15px rgba(255, 0, 255, 0.3),
+                         0 0 20px rgba(255, 0, 255, 0.2);
+            animation: textGlow 2s ease-in-out infinite alternate;
+            transition: transform 0.3s ease;
+        }
+
+        .quote .chinese:hover {
+            transform: translateY(-2px);
+        }
+
+        .quote .english {
+            font-family: var(--english-font) !important;
+            font-size: 1em;
+            display: block;
+            color: rgba(255, 255, 255, 0.95);
+            text-align: center;
+            width: 100%;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.6),
+                         0 0 10px rgba(0, 255, 255, 0.4);
+            opacity: 0.9;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            margin-top: 0.8em;
+        }
+
+        .quote .english:hover {
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+
+        .quote::before,
+        .quote::after {
+            content: '"';
+            font-size: 2.4em;
+            position: absolute;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.8),
+                         0 0 10px rgba(0, 255, 255, 0.5);
+            animation: quoteMarkGlow 2s ease-in-out infinite alternate;
+        }
+
+        .quote::before {
+            left: 15px;
+            top: 5px;
+        }
+
+        .quote::after {
+            right: 15px;
+            bottom: 5px;
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 5px rgba(0, 255, 255, 0.8),
+                            0 0 10px rgba(0, 255, 255, 0.5),
+                            0 0 15px rgba(255, 0, 255, 0.3),
+                            0 0 20px rgba(255, 0, 255, 0.2);
+            }
+            to {
+                text-shadow: 0 0 7px rgba(0, 255, 255, 0.9),
+                            0 0 12px rgba(0, 255, 255, 0.6),
+                            0 0 17px rgba(255, 0, 255, 0.4),
+                            0 0 22px rgba(255, 0, 255, 0.3);
+            }
+        }
+
+        @keyframes quoteGlow {
+            from {
+                box-shadow: 0 0 20px rgba(0, 255, 200, 0.2),
+                           inset 0 0 15px rgba(255, 0, 111, 0.15);
+            }
+            to {
+                box-shadow: 0 0 25px rgba(0, 255, 200, 0.3),
+                           inset 0 0 20px rgba(255, 0, 111, 0.25);
+            }
+        }
+
+        @keyframes quoteMarkGlow {
+            from {
+                text-shadow: 0 0 5px rgba(0, 255, 255, 0.8),
+                            0 0 10px rgba(0, 255, 255, 0.5);
+            }
+            to {
+                text-shadow: 0 0 7px rgba(0, 255, 255, 0.9),
+                            0 0 12px rgba(0, 255, 255, 0.6);
+            }
+        }
+
+        /* Add ripple effect to buttons */
+        #generateStoryBtn {
+            background: linear-gradient(45deg,
+                rgba(0, 20, 40, 0.9),
+                rgba(0, 40, 80, 0.9));
+            border: 1px solid rgba(0, 255, 200, 0.3);
+            color: rgba(0, 255, 200, 0.9);
+            box-shadow: 0 0 10px rgba(0, 255, 200, 0.2);
+            text-shadow: 0 0 5px rgba(0, 255, 200, 0.5);
+            font-size: 1.3em;
+            font-family: 'Lenyah' !important;
+            cursor: pointer;
+            border-radius: 3px;
+            padding: 10px 20px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        #generateStoryBtn:hover {
+            background: linear-gradient(45deg,
+                rgba(0, 30, 60, 0.9),
+                rgba(0, 50, 100, 0.9));
+            box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
+            text-shadow: 0 0 8px rgba(0, 255, 200, 0.7);
+            transform: translateY(-1px);
+        }
+
+        #generateStoryBtn:disabled {
+             opacity: 0.5;
+             cursor: not-allowed;
+        }
+
+        /* Remove ripple effect styles */
+        .ripple {
+            display: none;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        #story-output {
+            width: 100%;
+            height: auto;
+            box-sizing: border-box;
+            background: rgba(20, 20, 30, 0.3);
+            border: 1px solid rgba(100, 100, 255, 0.3);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: left;
+            font-size: 1.1em;
+            line-height: 2;
+            color: rgba(255, 255, 255, 1);
+            font-family: var(--quote-font);
+            letter-spacing: 0.8px;
+            box-shadow: 0 0 20px rgba(50, 50, 150, 0.4), inset 0 0 15px rgba(100, 100, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: none; /* Hide by default */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        #story-output.visible {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #story-output p:first-child {
+            text-align: center;
+            color: rgba(255, 255, 255, 1);
+            font-size: 1.8em;
+            margin-bottom: 40px;
+            font-family: var(--quote-font);
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(100, 100, 255, 0.5);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        #story-output p:not(:first-child):not(.english) {
+            font-family: var(--quote-font);
+            margin-bottom: 2em;
+            font-weight: 300;
+            letter-spacing: 0.8px;
+            text-indent: 2em;
+            line-height: 2.2;
+            position: relative;
+            padding-left: 15px;
+            border-left: 2px solid rgba(100, 100, 255, 0.3);
+            color: rgba(255, 255, 255, 1);
+        }
+
+        #story-output p.english {
+            font-family: var(--english-font) !important;
+            font-size: 0.95em;
+            margin-top: 25px;
+            color: rgba(255, 255, 255, 1);
+            font-style: italic;
+            letter-spacing: 0.6px;
+            line-height: 1.9;
+            padding-left: 1.5em;
+            border-left: 2px solid rgba(100, 100, 255, 0.2);
+            background: rgba(30, 30, 50, 0.3);
+            padding: 15px 20px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        /* Add specific style for English title */
+        #story-output p.english strong {
+            display: block;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+
+        /* Ensure the first English paragraph (title) is centered */
+        #story-output p.english:first-of-type {
+            text-align: center;
+            padding: 0;
+            border-left: none;
+            background: none;
+        }
+
+        .story-genre {
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            font-style: italic;
+            height: 1.2em;
+            font-family: var(--quote-font);
+            color: rgba(255, 255, 255, 1);
+            text-align: center;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2em;
+            color: #aaa;
+            font-style: italic;
+            font-family: 'Lenyah' !important;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            letter-spacing: 1px;
+        }
+
+        .loading-text {
+            font-family: 'Lenyah' !important;
+            font-size: 1.3em;
+            letter-spacing: 1.5px;
+        }
+
+        .loading-percentage {
+            font-family: 'Lenyah' !important;
+            font-size: 1.5em;
+            margin-top: 10px;
+            color: rgba(245, 240, 220, 0.8);
+            font-weight: bold;
+            transition: color 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .loading-bar {
+            width: 200px;
+            height: 4px;
+            background-color: rgba(0, 255, 200, 0.1);
+            border-radius: 2px;
+            margin-top: 25px;
+            overflow: visible;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0, 255, 200, 0.3),
+                       0 0 20px rgba(255, 0, 111, 0.2);
+        }
+
+        .loading-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg,
+                rgba(0, 255, 200, 0.8),
+                rgba(255, 0, 111, 0.8));
+            width: 0%;
+            transition: width 0.5s ease-in-out;
+            border-radius: 2px;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0, 255, 200, 0.4),
+                       0 0 20px rgba(255, 0, 111, 0.3);
+        }
+
+        .camera-icon {
+            position: absolute;
+            right: -25px;
+            top: -20px;
+            width: 40px;
+            height: 40px;
+            animation: pulse 1s ease-in-out infinite alternate, sway 3s ease-in-out infinite;
+            transform-origin: center bottom;
+        }
+
+        .camera-icon svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 2px rgba(0, 255, 200, 0.3));
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes sway {
+            0% {
+                transform: rotate(-5deg);
+            }
+            50% {
+                transform: rotate(5deg);
+            }
+            100% {
+                transform: rotate(-5deg);
+            }
+        }
+
+        /* Back Arrow Button */
+        .back-page-arrow {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 100vh;
+            background: linear-gradient(to left, transparent, rgba(240, 208, 208, 0.05));
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+            border: none;
+            outline: none;
+        }
+
+        .back-page-arrow.enabled {
+            opacity: 0.5;
+            pointer-events: auto;
+        }
+
+        .back-page-arrow:hover {
+            background: linear-gradient(to left, transparent, rgba(240, 208, 208, 0.15));
+            width: 60px;
+        }
+
+        /* Next Arrow Button */
+        .next-page-arrow {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 50px;
+            height: 100vh;
+            background: linear-gradient(to right, transparent, rgba(240, 208, 208, 0.05));
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+            border: none;
+            outline: none;
+        }
+
+        .next-page-arrow.enabled {
+            opacity: 0.5;
+            pointer-events: auto;
+        }
+
+        .next-page-arrow:hover {
+            background: linear-gradient(to right, transparent, rgba(240, 208, 208, 0.15));
+            width: 60px;
+        }
+
+        /* 添加媒体查询，针对手机竖屏优化 */
+        @media (max-width: 768px) {
+            :root {
+                --notebook-width: 95vw;
+                --notebook-height: 90vh;
+            }
+
+            body {
+                padding: 5px;
+            }
+
+            .notebook-page {
+                padding: 15px;
+            }
+
+            input[type="text"],
+            select,
+            #generateStoryBtn {
+                font-size: 1.2em;
+                padding: 15px 20px;
+            }
+
+            .quote {
+                font-size: 1.1em;
+                padding: 15px;
+            }
+            
+            .movie-poster, .building-img {
+                max-height: 250px;
+            }
+            
+            #story-output {
+                padding: 15px;
+                font-size: 1em;
+            }
+            
+            #story-output p:first-child {
+                font-size: 1.5em;
+                margin-bottom: 30px;
+            }
+            
+            .next-page-arrow, .back-page-arrow {
+                width: 60px;
+            }
+            
+            .next-page-arrow.enabled, .back-page-arrow.enabled {
+                opacity: 0.7;
+            }
+        }
+        
+        /* 添加触摸设备优化 */
+        @media (hover: none) {
+            .next-page-arrow, .back-page-arrow {
+                opacity: 0.7;
+            }
+            
+            .next-page-arrow.enabled, .back-page-arrow.enabled {
+                opacity: 1;
+            }
+            
+            .movie-poster:hover, .building-img:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            
+            .quote .chinese:hover, .quote .english:hover {
+                transform: none;
+            }
+            
+            #generateStoryBtn:hover {
+                transform: none;
+            }
+            
+            input[type="text"]:hover, select:hover {
+                transform: none;
+            }
+        }
+
+        /* --- Style-based themes --- */
+        .style-light {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+        }
+
+        .style-dark {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+        }
+
+        @media (min-width: 1024px) {
+            :root {
+                --notebook-width: 800px;
+                --notebook-height: 800px;
+            }
+
+            body {
+                padding: 40px;
+            }
+
+            .notebook-page {
+                padding: 30px;
+            }
+
+            input[type="text"],
+            select,
+            #generateStoryBtn {
+                font-size: 1.2em;
+                padding: 15px 20px;
+            }
+
+            .quote {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .notebook-page {
+                padding: 15px;
+            }
+
+            input[type="text"],
+            select,
+            #generateStoryBtn {
+                font-size: 1em;
+                padding: 10px 15px;
+            }
+
+            .quote {
+                font-size: 0.9em;
+            }
+        }
+
+        /* Global font settings - default to Chinese font */
+        * {
+            font-family: var(--chinese-font);
+        }
+
+        /* Quote specific font settings */
+        .quote,
+        .quote .chinese,
+        .story-genre {
+            font-family: var(--quote-font) !important;
+        }
+
+        /* Second page story content - use HuiwenMingchao font */
+        #story-output {
+            font-family: var(--quote-font) !important;
+        }
+
+        #story-output p:first-child {
+            font-family: var(--quote-font) !important;
+        }
+
+        #story-output p:not(:first-child):not(.english) {
+            font-family: var(--quote-font) !important;
+        }
+
+        #story-output p.english {
+            font-family: var(--english-font) !important;
+        }
+
+        /* Remove conflicting rules */
+        /* Ensure all Chinese text uses FuLuLuxi */
+        body, 
+        p, 
+        h1, h2, h3, h4, h5, h6, 
+        span:not(.english):not(.chinese), 
+        div:not(.english):not(#story-output):not(.quote):not(.story-genre), 
+        button:not(#generateStoryBtn), 
+        .notebook-back,
+        .notebook-front,
+        .controls-area,
+        .input-group,
+        .revealed-content,
+        .images-container,
+        .movie-poster,
+        .building-img,
+        .next-page-arrow,
+        .back-page-arrow {
+            font-family: var(--chinese-font) !important;
+        }
+
+        /* Override select styles */
+        select {
+            font-family: var(--quote-font) !important;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: rgba(10, 20, 30, 0.8) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23f0d0d0" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>') no-repeat right 12px center !important;
+            background-size: 14px !important;
+            padding-right: 30px !important;
+        }
+
+        select option {
+            font-family: var(--quote-font) !important;
+            background-color: #300505;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        select:focus {
+            border-color: rgba(0, 255, 200, 0.5);
+            box-shadow: 0 0 15px rgba(0, 255, 200, 0.3),
+                       inset 0 0 8px rgba(0, 255, 200, 0.2);
+        }
+
+        /* Override any conflicting font rules */
+        #generateStoryBtn,
+        .loading,
+        .loading-text,
+        .loading-percentage {
+            font-family: 'Lenyah' !important;
+        }
+
+        /* Add a more specific override at the end of the CSS */
+        .notebook-back .loading,
+        .notebook-back .loading-text,
+        .notebook-back .loading-percentage {
+            font-family: 'Lenyah' !important;
+        }
+
+        /* Override any other potential font settings */
+        #generateStoryBtn,
+        .loading *,
+        .loading-text,
+        .loading-percentage {
+            font-family: 'Lenyah' !important;
+        }
+
+        /* Ensure loading elements in story output use Lenyah */
+        #story-output div[class^="loading"] {
+            font-family: 'Lenyah' !important;
+        }
+
+        /* 自定义滚动条样式 */
+        .notebook-page::-webkit-scrollbar {
+            width: 4px;
+            background: transparent;
+        }
+
+        .notebook-page::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 2px;
+            transition: background 0.3s ease;
+        }
+
+        .notebook-page::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .notebook-page::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        /* Firefox滚动条样式 */
+        .notebook-page {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.08) transparent;
+        }
+
+        /* 滑动提示样式 */
+        .swipe-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .swipe-hint.show {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .swipe-hint {
+                display: block;
+            }
+            
+            .notebook-page {
+                position: relative;
+                overflow-x: hidden;
+            }
+            
+            .notebook-page::before,
+            .notebook-page::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                width: 20px;
+                height: 100%;
+                z-index: 10;
+            }
+            
+            .notebook-page::before {
+                left: 0;
+                background: linear-gradient(to right, rgba(0,0,0,0.1), transparent);
+            }
+            
+            .notebook-page::after {
+                right: 0;
+                background: linear-gradient(to left, rgba(0,0,0,0.1), transparent);
+            }
+        }
+
+        @media (min-width: 769px) {
+            .swipe-hint {
+                display: none;
+            }
+        }
+
+        /* 添加触摸滑动功能 */
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const minSwipeDistance = 50; // 最小滑动距离
+        const edgeSwipeThreshold = 20; // 边缘滑动阈值
+
+        // 触摸事件监听器
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.touches[0].clientX;
+        }, false);
+
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].clientX;
+            handleSwipe();
+        }, false);
+
+        // 处理滑动
+        function handleSwipe() {
+            const swipeDistance = touchEndX - touchStartX;
+            const windowWidth = window.innerWidth;
+            
+            // 检查是否在屏幕边缘开始滑动
+            const isEdgeSwipe = touchStartX < edgeSwipeThreshold || touchStartX > windowWidth - edgeSwipeThreshold;
+            
+            if (Math.abs(swipeDistance) > minSwipeDistance || isEdgeSwipe) {
+                if (swipeDistance > 0) {
+                    // 向右滑动，返回上一页
+                    if (currentPage === 2) {
+                        slideBack();
+                    }
+                } else {
+                    // 向左滑动，进入下一页
+                    if (currentPage === 1 && locationSelect.value && nameInput.value) {
+                        slidePage();
+                    }
+                }
+            }
+        }
+
+        // 显示滑动提示
+        function showSwipeHint() {
+            const swipeHint = document.querySelector('.swipe-hint');
+            swipeHint.classList.add('show');
+            setTimeout(() => {
+                swipeHint.classList.remove('show');
+            }, 3000);
+        }
+
+        // 在页面加载和切换时显示提示
+        document.addEventListener('DOMContentLoaded', showSwipeHint);
+        document.querySelector('.next-page-arrow').addEventListener('click', showSwipeHint);
+        document.querySelector('.back-page-arrow').addEventListener('click', showSwipeHint);
+
+        // 添加边缘滑动提示样式
+        const style = document.createElement('style');
+        style.textContent = `
+            @media (max-width: 768px) {
+                .notebook-page {
+                    position: relative;
+                    overflow-x: hidden;
+                }
+                
+                .notebook-page::before,
+                .notebook-page::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    width: 20px;
+                    height: 100%;
+                    z-index: 10;
+                }
+                
+                .notebook-page::before {
+                    left: 0;
+                    background: linear-gradient(to right, rgba(0,0,0,0.1), transparent);
+                }
+                
+                .notebook-page::after {
+                    right: 0;
+                    background: linear-gradient(to left, rgba(0,0,0,0.1), transparent);
+                }
+                
+                .swipe-hint {
+                    display: block;
+                    font-size: 12px;
+                    padding: 6px 12px;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </style>
+</head>
+
+<body>
+    <!-- 添加触摸滑动提示 -->
+    <div class="swipe-hint">
+        <span>← 左右滑动切换页面 →</span>
+    </div>
+
+    <div class="video-background"></div>
+    <!-- 如果背景图片无法加载，显示静态图片作为后备 -->
+    <img src="https://i.guancha.cn/bbs/2021/01/25/20210125145949466.jpeg" alt="Background Image" style="display: none;">
+    <div class="notebook" id="notebook">
+        <div class="notebook-inner">
+            <div class="notebook-page notebook-front">
+
+                <div class="controls-area">
+                <div class="input-group">
+                         <input type="text" id="name" placeholder="your name">
+                    <select id="location">
+                             <option value="" disabled selected>select a place</option>
+                        <option value="长江索道">长江索道</option>
+                        <option value="来福士">来福士</option>
+                        <option value="防空洞火锅">防空洞火锅</option>
+                        <option value="交通茶馆">交通茶馆</option>
+                        <option value="李子坝">李子坝</option>
+                        <option value="皇冠大扶梯">皇冠大扶梯</option>
+                        <option value="洪崖洞">洪崖洞</option>
+                        <option value="磁器口">磁器口</option>
+                    </select>
+                    </div>
+                    <!-- Removed Reveal Button -->
+                    <!-- <button id="revealBtn" onclick="handleRevealClick()" title="揭示内容">🚇</button> -->
+                </div>
+
+                <div class="revealed-content" id="content">
+                    <p id="quote" class="quote"></p>
+                    <div class="images-container">
+                    <img id="poster" class="movie-poster" src="" alt="Movie Poster">
+                         <img id="building" class="building-img" src="" alt="Building Image">
+                    </div>
+                </div>
+
+                 <button class="next-page-arrow" id="nextPageArrow" onclick="slidePage()"></button>
+
+            </div>
+
+            <div class="notebook-page notebook-back" id="notebookBack">
+                 <!-- Back Arrow -->
+                 <button class="back-page-arrow" onclick="slideBack()" title="返回上一页"></button>
+
+                 <!-- Genre Display -->
+                 <div class="story-genre" id="storyGenre"></div>
+                 <!-- Generate Button -->
+                 <button id="generateStoryBtn">generate a film story..</button>
+                 <!-- Story Output -->
+                 <div id="story-output"></div>
+                 <!-- Save as Image Button -->
+                 <button id="saveAsImageBtn" onclick="saveStoryAsImage()" style="display: none;">Save as Image</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const locations = [
+            { name: '千厮门大桥', image: 'assets/images/千厮门大桥.png' },
+            { name: '李子坝', image: 'assets/images/李子坝.jpg' },
+            { name: '白象居', image: 'assets/images/白象居.png' },
+            { name: '长江索道', image: 'assets/images/长江索道1.png' },
+            { name: '皇冠大扶梯', image: 'assets/images/皇冠大扶梯1.png' },
+            { name: '朝天门码头', image: 'assets/images/朝天门码头1.png' },
+            { name: '弹子石码头', image: 'assets/images/弹子石码头.jpg' },
+            { name: '来福士', image: 'assets/images/来福士.jpg' },
+            { name: '南滨路', image: 'assets/images/南滨路2.jpg' },
+            { name: '老居民楼', image: 'assets/images/老居民楼.png' }
+        ];
+
+        const movies = [
+            { name: '疯狂的石头', image: 'assets/images/疯狂的石头1.png' },
+            { name: '少年的你', image: ['assets/images/少年的你1.jpg', 'assets/images/少年的你2.jpg'] },
+            { name: '日照重庆', image: 'assets/images/日照重庆1.jpg' },
+            { name: '刺杀小说家', image: 'assets/images/刺杀小说家.jpg' },
+            { name: '铤而走险', image: 'assets/images/铤而走险.jpg' },
+            { name: '好奇害死猫', image: 'assets/images/好奇害死猫.jpg' },
+            { name: '受益人', image: 'assets/images/受益人.jpg' },
+            { name: '秘岸', image: 'assets/images/秘岸.jpg' },
+            { name: '坚如磐石', image: 'assets/images/坚如磐石.jpg' }
+        ];
+
+        // 台词库
+        const quotes = {
+            '千厮门大桥': [
+                "你是一只能过河的卒，只能进不能退。\nYou are a pawn that can cross the river, you can only move forward, not backward.",
+                "一条狗，吃过一口肉，就再也不想吃骨头。\nOnce a dog has tasted meat, it no longer wants bones."
+            ],
+            '李子坝': [
+                "这城市像个迷宫，走错一步就出不去了。\nThis city is like a maze, one wrong step and you can't get out.",
+                "在黑暗里找路的人，不是被影子吞没，就是把自己变成灯。\nThose who search for a path in darkness are either swallowed by shadows or become a light themselves."
+            ],
+            '白象居': [
+                "如果在现实世界失去你，那就在平行世界重写故事，让我们再相遇。\nIf I lose you in this world, I'll rewrite our story in a parallel universe so we can meet again.",
+                "我相信，小说里的世界和人，都存在。\nI believe that the worlds and people in novels truly exist."
+            ],
+            '长江索道': [
+                "城市是母体，而我们生活在她的子宫里\nThe city is the mother, and we live in her womb",
+                "你当这是公共厕所迈，想来就来，想走就走\nDo you think this is a public toilet, coming and going as you please?"
+            ],
+            '皇冠大扶梯': [
+                "我们生活在阴沟里，但依然有人仰望星空。\nWe live in the gutter, but some still look up at the stars.",
+                "从来没有一节课，教过我们如何变成大人。\nThere was never a class that taught us how to become adults.",
+                "路上总会有阴影，抬头就会看到星光。\nThere will always be shadows on the road, but look up and you'll see starlight.",
+                "生活，就像夏天的柑橘树，挂着青皮的果，苦是一定的，甜也有。\nLife is like a summer citrus tree, bearing green-skinned fruit - bitter for sure, but sweet too.",
+                "你保护世界，我保护你。\nYou protect the world, I'll protect you."
+            ],
+            '朝天门码头': [
+                "船票过期了，可码头还在等一个没靠岸的人\nThe ticket has expired, but the pier still waits for someone who hasn't docked"
+            ],
+            '弹子石码头': [
+                "大人有些事情就不能跟小孩讲。\nThere are some things adults can't tell children.",
+                "现在这些人最严重的问题，不是生理有病，而是心理有病，看上去都不怎么开心的。\nThe most serious problem with people now is not physical illness, but mental illness - they don't seem very happy.",
+                "疤也是肉长的，已经成为你身体的一部分了。\nScars are made of flesh too, they've become part of your body.",
+                "每个人都需要心理的倾诉。\nEveryone needs psychological counseling."
+            ],
+            '来福士': [
+                "穷人的谎话是石头，咽下去沉胃，吐出来砸脚。\nA poor person's lies are like stones - swallowed they sink in the stomach, spit out they hit the feet."
+            ],
+            '南滨路': [
+                "我们生活在阴沟里，但依然有人仰望星空。\nWe live in the gutter, but some still look up at the stars.",
+                "从来没有一节课，教过我们如何变成大人。\nThere was never a class that taught us how to become adults.",
+                "路上总会有阴影，抬头就会看到星光。\nThere will always be shadows on the road, but look up and you'll see starlight.",
+                "生活，就像夏天的柑橘树，挂着青皮的果，苦是一定的，甜也有。\nLife is like a summer citrus tree, bearing green-skinned fruit - bitter for sure, but sweet too.",
+                "你保护世界，我保护你。\nYou protect the world, I'll protect you."
+            ],
+            '老居民楼': [
+                "猫虽有九条命, 最终却死于好奇心\nThough a cat has nine lives, it ultimately dies of curiosity",
+                "窥见秘密的人，最后都成了秘密的猎物。\nThose who glimpse secrets eventually become prey to the secrets."
+            ]
+        };
+
+        const movieData = {
+            "长江索道": {
+                 poster: "https://picsum.photos/seed/p_cablecar/100/150",
+                 building: "https://picsum.photos/seed/b_cablecar/180/120",
+                 quote: "江风带着索道的歌谣，飘过时间的痕迹。"
+             },
+             "来福士": {
+                 poster: "https://picsum.photos/seed/p_raffles/100/150",
+                 building: "https://picsum.photos/seed/b_raffles/180/120",
+                 quote: "扬帆的建筑，刺破云层，是山城的未来想象。"
+             },
+            "防空洞火锅": {
+                 poster: "https://picsum.photos/seed/p_hotpot/100/150",
+                 building: "https://picsum.photos/seed/b_hotpot/180/120",
+                 quote: "洞里的热辣，是这座城市的坚韧与温度。"
+             },
+            "交通茶馆": {
+                  poster: "https://picsum.photos/seed/p_tea/100/150",
+                  building: "https://picsum.photos/seed/b_tea/180/120",
+                  quote: "一杯盖碗茶，半日闲时光，沉淀着老重庆的慢。"
+             },
+            "李子坝": {
+                 poster: "https://picsum.photos/seed/p_liziba/100/150",
+                 building: "https://picsum.photos/seed/b_liziba/180/120",
+                 quote: "穿楼而过的，不只是列车，还有生活的奇幻感。"
+             },
+            "皇冠大扶梯": {
+                 poster: "https://picsum.photos/seed/p_escalator/100/150",
+                 building: "https://picsum.photos/seed/b_escalator/180/120",
+                 quote: "亚洲第二长，连接的是山与城，上与下。"
+             },
+            "洪崖洞": {
+                 poster: "https://picsum.photos/seed/p_hongya/100/150",
+                 building: "https://picsum.photos/seed/b_hongya/180/120",
+                 quote: "现实版的千与千寻，灯火辉煌，是不夜的童话。"
+             },
+            "磁器口": {
+                 poster: "https://picsum.photos/seed/p_ciqi/100/150",
+                 building: "https://picsum.photos/seed/b_ciqi/180/120",
+                 quote: "青石板路，麻花飘香，千年古镇的故事还在讲。"
+             },
+            "DEFAULT": {
+                 poster: "https://picsum.photos/seed/p_default/100/150",
+                 building: "https://picsum.photos/seed/b_default/180/120",
+                 quote: "山城的每一个角落，都可能藏着一个故事..."
+            }
+         };
+
+        const notebook = document.getElementById('notebook');
+        const contentDiv = document.getElementById('content');
+        const posterImg = document.getElementById('poster');
+        const buildingImg = document.getElementById('building');
+        const quoteP = document.getElementById('quote');
+        const revealBtn = document.getElementById('revealBtn');
+        const locationSelect = document.getElementById('location');
+        const arrowBtn = document.getElementById('nextPageArrow');
+        const nameInput = document.getElementById('name');
+        const generateBtn = document.getElementById('generateStoryBtn');
+        const storyOutput = document.getElementById('story-output');
+        const notebookBack = document.getElementById('notebookBack'); // Get back page element
+        const storyGenreDiv = document.getElementById('storyGenre'); // Get genre div
+
+        let isContentShown = false;
+        let currentName = "";
+        let currentLocation = "";
+
+        // --- Event Listener for Location Change --- 
+        locationSelect.addEventListener('change', handleLocationChange);
+        nameInput.addEventListener('input', handleInputChange);
+
+        // Function triggered when location dropdown changes
+        function handleLocationChange() {
+            // 立即更新内容，不等待
+            checkInputsAndUpdateContent();
+            
+            // 确保图片立即加载
+            const selectedLocation = locationSelect.value;
+            if (selectedLocation) {
+                const locationData = locations.find(loc => loc.name === selectedLocation);
+                if (locationData) {
+                    buildingImg.src = locationData.image;
+                    buildingImg.onload = function() {
+                        // 图片加载完成后显示
+                        contentDiv.style.display = 'flex';
+                    };
+                }
+                
+                // 查找对应的电影海报
+                const locationMovieMap = {
+                    '千厮门大桥': '坚如磐石',
+                    '弹子石码头': '秘岸',
+                    '皇冠大扶梯': '少年的你',
+                    '南滨路': '少年的你',
+                    '李子坝': '铤而走险',
+                    '老居民楼': '好奇害死猫',
+                    '长江索道': '疯狂的石头',
+                    '来福士': '受益人',
+                    '白象居': '刺杀小说家',
+                    '朝天门码头': '日照重庆'
+                };
+                
+                const movieName = locationMovieMap[selectedLocation];
+                const movieData = movieName ? movies.find(movie => movie.name === movieName) : null;
+                
+                if (movieData) {
+                    if (Array.isArray(movieData.image)) {
+                        if (movieName === '少年的你') {
+                            if (selectedLocation === '皇冠大扶梯') {
+                                posterImg.src = movieData.image[0];
+                            } else if (selectedLocation === '南滨路') {
+                                posterImg.src = movieData.image[1];
+                            }
+                        } else {
+                            posterImg.src = movieData.image[0];
+                        }
+                    } else {
+                        posterImg.src = movieData.image;
+                    }
+                    posterImg.onload = function() {
+                        // 图片加载完成后显示
+                        contentDiv.style.display = 'flex';
+                    };
+                } else {
+                    posterImg.src = "assets/images/重庆夜景.jpg";
+                }
+            }
+        }
+
+        // Function triggered when name input changes
+        function handleInputChange() {
+            // 只检查输入是否完整，不触发内容更新
+            currentName = nameInput.value.trim();
+            if (currentLocation && currentName) {
+                arrowBtn.classList.add('enabled');
+                arrowBtn.disabled = false;
+            } else {
+                arrowBtn.classList.remove('enabled');
+                arrowBtn.disabled = true;
+            }
+        }
+
+        // Function to check if both inputs are filled and update content accordingly
+        function checkInputsAndUpdateContent() {
+            const newLocation = locationSelect.value;
+            const newName = nameInput.value.trim();
+            
+            // 检查位置或名字是否发生变化
+            const locationChanged = newLocation !== currentLocation;
+            const nameChanged = newName !== currentName;
+            
+            // 更新当前值
+            currentLocation = newLocation;
+            currentName = newName;
+
+            if (currentLocation && currentName) { // If both name and location are provided
+                // Find the location data from our locations array
+                const locationData = locations.find(loc => loc.name === currentLocation);
+                
+                // Define specific location to movie mappings
+                const locationMovieMap = {
+                    '千厮门大桥': '坚如磐石',
+                    '弹子石码头': '秘岸',
+                    '皇冠大扶梯': '少年的你',
+                    '南滨路': '少年的你',
+                    '李子坝': '铤而走险',
+                    '老居民楼': '好奇害死猫',
+                    '长江索道': '疯狂的石头',
+                    '来福士': '受益人',
+                    '白象居': '刺杀小说家',
+                    '朝天门码头': '日照重庆'
+                };
+                
+                // Find the corresponding movie based on the mapping
+                const movieName = locationMovieMap[currentLocation];
+                const movieData = movieName ? movies.find(movie => movie.name === movieName) : null;
+                
+                // Hide content briefly for update
+                contentDiv.style.display = 'none';
+
+                // Update content with actual images
+                if (movieData) {
+                    // If we have a movie related to this location
+                    if (Array.isArray(movieData.image)) {
+                        // Special handling for "少年的你" movie
+                        if (movieName === '少年的你') {
+                            if (currentLocation === '皇冠大扶梯') {
+                                // Use first image for 皇冠大扶梯
+                                posterImg.src = movieData.image[0];
+                            } else if (currentLocation === '南滨路') {
+                                // Use second image for 南滨路
+                                posterImg.src = movieData.image[1];
+                            }
+                        } else {
+                            // For other movies with multiple images, use the first one
+                            posterImg.src = movieData.image[0];
+                        }
+                    } else {
+                        posterImg.src = movieData.image;
+                    }
+                    posterImg.alt = movieData.name + " 海报";
+                } else {
+                    // If no movie is found, use a default image
+                    posterImg.src = "assets/images/重庆夜景.jpg";
+                    posterImg.alt = "重庆夜景";
+                }
+                
+                // Set the building image from our locations array
+                buildingImg.src = locationData ? locationData.image : "assets/images/重庆夜景.jpg";
+                buildingImg.alt = currentLocation + " 实景";
+                
+                // Set the quote from our quotes array
+                const locationQuotes = quotes[currentLocation];
+                if (locationQuotes && locationQuotes.length > 0) {
+                    const randomQuote = locationQuotes[Math.floor(Math.random() * locationQuotes.length)];
+                    const [chinese, english] = randomQuote.split('\n');
+                    
+                    // Split Chinese text into sentences based on punctuation marks
+                    const chineseSentences = chinese.split(/[，。！？、]/).filter(s => s.trim());
+                    const chineseHTML = chineseSentences.map(s => `<span class="chinese">${s.trim()}</span>`).join('');
+                    
+                    // Split English text into sentences based on punctuation marks
+                    const englishSentences = english.split(/[,.!?]/).filter(s => s.trim());
+                    const englishHTML = englishSentences.map(s => `<span class="english">${s.trim()}</span>`).join('');
+                    
+                    quoteP.innerHTML = chineseHTML + englishHTML;
+                    
+                    // 添加粒子效果事件监听
+                    setTimeout(() => {
+                        const chineseSpans = quoteP.querySelectorAll('.chinese span');
+                        const englishSpans = quoteP.querySelectorAll('.english span');
+                        
+                        // 为每个文字片段添加鼠标移动事件
+                        [...chineseSpans, ...englishSpans].forEach(span => {
+                            span.addEventListener('mousemove', (e) => {
+                                createTextParticles(span, e);
+                            });
+                        });
+                    }, 100);
+                } else {
+                    quoteP.textContent = "重庆的每一个角落，都可能藏着一个故事...";
+                }
+
+                // Show content after a small delay
+                setTimeout(() => {
+                    contentDiv.style.display = 'flex';
+                    isContentShown = true;
+                    // 确保箭头按钮始终启用
+                    arrowBtn.classList.add('enabled');
+                    arrowBtn.disabled = false;
+                }, 50); 
+
+                // 只在以下情况重置后页：
+                // 1. 当前不在第二页（notebook没有flipped类）
+                // 2. 或者当前没有生成的故事内容
+                // 3. 或者位置或名字发生了变化
+                if (!notebook.classList.contains('flipped') || 
+                    storyOutput.innerHTML.trim() === '' || 
+                    locationChanged || 
+                    nameChanged) {
+                    resetBackPage();
+                }
+
+            } else { // If either name or location is missing
+                contentDiv.style.display = 'none';
+                isContentShown = false;
+                arrowBtn.classList.remove('enabled');
+                arrowBtn.disabled = true;
+                resetBackPage(); // 当输入不完整时重置后页
+            }
+        }
+
+        function slidePage() {
+            notebook.classList.add('flipped');
+            
+            // 启用返回按钮
+            const backArrow = document.querySelector('.back-page-arrow');
+            if (backArrow) {
+                backArrow.classList.add('enabled');
+            }
+            
+            // 确保生成按钮可见且可用
+            const generateBtn = document.getElementById('generateStoryBtn');
+            if (generateBtn) {
+                generateBtn.style.display = 'inline-block';
+                generateBtn.disabled = false;
+            }
+            
+            // 检查故事内容是否存在，如果存在则显示保存按钮
+            if (storyOutput.innerHTML.trim() !== '' && !storyOutput.querySelector('.loading')) {
+                const saveButton = document.getElementById('saveAsImageBtn');
+                if (saveButton) {
+                    saveButton.style.display = 'inline-block';
+                }
+            } else {
+                // 如果故事内容不存在或正在加载，隐藏保存按钮
+                const saveButton = document.getElementById('saveAsImageBtn');
+                if (saveButton) {
+                    saveButton.style.display = 'none';
+                }
+            }
+            
+            // 重置故事输出区域
+            if (storyOutput.innerHTML.trim() === '') {
+                storyOutput.style.display = 'none';
+                storyOutput.classList.remove('visible');
+            }
+        }
+
+        function slideBack() {
+            notebook.classList.remove('flipped');
+            
+            // 启用返回按钮
+            const backArrow = document.querySelector('.back-page-arrow');
+            if (backArrow) {
+                backArrow.classList.remove('enabled');
+            }
+            
+            // 确保箭头按钮保持启用状态
+            if (currentLocation && currentName) {
+                arrowBtn.classList.add('enabled');
+                arrowBtn.disabled = false;
+            }
+        }
+
+        function resetBackPage() {
+            storyGenreDiv.textContent = ''; // Clear genre text
+            storyOutput.innerHTML = ''; // Clear story
+            storyOutput.classList.remove('visible'); // Remove visible class
+            storyOutput.style.display = 'none'; // Hide the container
+            generateBtn.style.display = 'inline-block'; // Show generate button
+            generateBtn.disabled = false;
+            // Remove specific style classes
+            notebookBack.classList.remove('style-light', 'style-dark');
+            
+            // 确保保存按钮隐藏
+            const saveButton = document.getElementById('saveAsImageBtn');
+            if (saveButton) {
+                saveButton.style.display = 'none';
+            }
+            
+            // 重置生成状态
+            isGeneratingStory = false;
+        }
+
+        contentDiv.style.display = 'none';
+        arrowBtn.classList.remove('enabled');
+        arrowBtn.disabled = true; // Ensure arrow starts disabled
+        locationSelect.value = "";
+
+        // Updated API call function to request both Chinese and English versions
+        async function callDeepSeekAPI(name, location, genre) {
+             console.log(`Calling DeepSeek for: ${name} at ${location} with pre-selected genre: ${genre}`);
+            const apiKey = 'sk-0c23a925f8ff472780c31e41fe82d422';
+            const apiUrl = 'https://api.deepseek.com/v1/chat/completions';
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${apiKey}`
+                    },
+                    body: JSON.stringify({
+                        model: "deepseek-chat",
+                        messages: [{
+                            role: "user",
+                            content: `你是一位专业的小说家，擅长创作各种风格的故事。请创作一个严格遵循**${genre}**风格的故事情节片段（约200字），要求如下：
+
+1. 主角叫${name}，故事发生在重庆的${location}。
+
+2. 故事内容必须严格符合所选风格，每种风格都有其独特的特征和元素：
+
+   - **喜剧**：必须包含幽默元素、轻松诙谐的情节，可以有误会、巧合等喜剧元素。故事应该让读者感到轻松愉快，可以包含夸张的情节、滑稽的对话或幽默的误会。
+   
+   - **治愈**：必须包含温暖、安慰、希望的元素，主角应该经历困难或获得安慰。故事应该传递正能量，可以包含内心成长、情感治愈或温暖人心的对话。
+   
+   - **动作**：必须包含动作场景、紧张刺激的情节，可以有追逐、打斗等元素。故事应该充满动感，可以包含激烈的冲突、紧张的追逐或惊险的逃生。
+   
+   - **犯罪**：必须包含犯罪元素、悬疑推理，可以有犯罪动机、调查过程等。故事应该涉及违法行为或调查，可以包含犯罪计划、警方调查或犯罪心理。
+   
+   - **爱情**：必须包含爱情元素、情感纠葛，可以有相遇、心动、矛盾等。故事应该围绕感情展开，可以包含浪漫邂逅、情感冲突或内心挣扎。
+   
+   - **童话**：必须包含奇幻元素、美好想象，可以有魔法、精灵、愿望等。故事应该充满想象力和美好，可以包含魔法元素、神奇生物或美好愿望。
+   
+   - **青春**：必须包含成长元素、青春活力，可以有友情、梦想、叛逆等。故事应该体现年轻人的特点，可以包含校园生活、青春梦想或成长困惑。
+   
+   - **悬疑**：必须包含谜团、线索、推理，可以有神秘事件、调查过程等。故事应该充满悬念，可以包含未解之谜、隐藏线索或推理过程。
+   
+   - **恐怖**：必须包含恐怖元素、紧张氛围，可以有超自然现象、恐惧心理等。故事应该令人感到恐惧，可以包含诡异现象、恐怖氛围或心理恐惧。
+   
+   - **惊悚**：必须包含紧张刺激、危险威胁，可以有危险情境、逃生过程等。故事应该令人感到紧张，可以包含危险场景、紧张氛围或惊险逃生。
+   
+   - **幻想**：必须包含奇幻元素、超现实情节，可以有魔法、异世界、特殊能力等。故事应该充满想象力，可以包含奇幻世界、特殊能力或超现实元素。
+   
+   - **科幻**：必须包含科技元素、未来想象，可以有未来科技、太空探索、人工智能等。故事应该涉及科技，可以包含未来科技、太空探索或人工智能。
+
+3. 文字风格要求：
+   - 文字风格必须与指定的${genre}风格完全融合，使用符合该风格的词汇和句式。
+   - 对白可以掺杂重庆方言。
+   - 只能包含一个地点和两至三个人物。
+   - 故事逻辑前后连贯，不能矛盾。
+   - 故事的文笔流畅，略带文艺气息。
+
+4. 格式要求：
+   - 包含标题（用「」括起）。
+   - **不要**在开头包含"风格：..."或任何风格标签。
+
+5. 请同时提供英文版本，格式如下：
+
+中文故事：
+[你的中文故事]
+
+[标题同样用「」括起，并居中显示，不要在中英文版本之间出现任何翻译或版本相关的词语或标记，比如英文故事、英文翻译、英文版本等]`
+                        }],
+                        temperature: 0.7,
+                        max_tokens: 500
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorBody = await response.text();
+                    console.error("API Error Response:", errorBody);
+                    let errorMsg = `API 请求失败: ${response.status} ${response.statusText}`;
+                    try {
+                        const errorJson = JSON.parse(errorBody);
+                        if (errorJson.error && errorJson.error.message) {
+                            errorMsg += ` - ${errorJson.error.message}`;
+                        }
+                    } catch(e) { /* Ignore parsing error */ }
+                    throw new Error(errorMsg);
+                }
+
+                const data = await response.json();
+
+                if (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) {
+                     // API now returns both Chinese and English versions
+                     let storyText = data.choices[0].message.content.trim();
+                     
+                     // Split the content into Chinese and English parts
+                     const chineseMatch = storyText.match(/中文故事：\n([\s\S]*?)(?=\n\n|$)/);
+                     const englishMatch = storyText.match(/\n\n([\s\S]*?)$/);
+                     
+                     let chineseStory = chineseMatch ? chineseMatch[1].trim() : storyText;
+                     let englishStory = englishMatch ? englishMatch[1].trim() : '';
+                     
+                     // Remove any occurrence of "英文翻译：" text and clean up the English story
+                     englishStory = englishStory
+                         .replace(/英文翻译：\s*/g, '')
+                         .replace(/^英文翻译\s*/g, '')
+                         .replace(/^\(英文翻译\)\s*/g, '')
+                         .replace(/^英文：\s*/g, '')
+                         .replace(/^英文版：\s*/g, '')
+                         .replace(/^English version：\s*/g, '')
+                         .replace(/^English：\s*/g, '')
+                         .replace(/^English translation：\s*/g, '')
+                         .replace(/英文翻译：/g, '')
+                         .replace(/英文翻译/g, '')
+                         .replace(/\(英文翻译\)/g, '')
+                         .replace(/英文：/g, '')
+                         .replace(/英文版：/g, '')
+                         .replace(/English version：/g, '')
+                         .replace(/English：/g, '')
+                         .replace(/English translation：/g, '')
+                         .replace(/英文版本：/g, '')
+                         .replace(/英文版本/g, '')
+                         .replace(/\(英文版本\)/g, '')
+                         .replace(/版本：/g, '')
+                         .replace(/version：/g, '')
+                         .replace(/翻译：/g, '')
+                         .replace(/translation：/g, '')
+                         .replace(/translation/g, '')
+                         .replace(/translated version：/g, '')
+                         .replace(/translated version/g, '')
+                         .replace(/translated：/g, '')
+                         .replace(/translated/g, '')
+                         .replace(/version/g, '')
+                         .replace(/英文/g, '')
+                         .replace(/English/g, '')
+                         .trim();
+                     
+                     // Check if the content already contains both Chinese and English
+                     // If the content contains "中文故事：" marker, it's already formatted
+                     const hasFormattedContent = storyText.includes("中文故事：");
+                     
+                     // If the content is already formatted, use it directly
+                     if (hasFormattedContent) {
+                         // --- Format Chinese Story --- 
+                         let processedChineseStory = '';
+                         const chineseParts = chineseStory.split(/(\n\s*\n)/);
+                         let isFirstParagraph = true;
+                         chineseParts.forEach(part => {
+                             const trimmedPart = part.trim();
+                             if (trimmedPart.length === 0) return;
+                             if (/^\n\s*\n$/.test(part)) return;
+
+                             const titleMatch = trimmedPart.match(/^「(.*?)」$/);
+                             if (titleMatch && isFirstParagraph) {
+                                 processedChineseStory += `<p><strong>「${titleMatch[1]}」</strong></p>`;
+                             } else {
+                                 processedChineseStory += `<p>${trimmedPart.replace(/\n/g, '<br>')}</p>`;
+                             }
+                             isFirstParagraph = false;
+                         });
+                         
+                         // --- Format English Story --- 
+                         let processedEnglishStory = '';
+                         if (englishStory) {
+                             const englishParts = englishStory.split(/(\n\s*\n)/);
+                             isFirstParagraph = true;
+                             englishParts.forEach(part => {
+                                 const trimmedPart = part.trim();
+                                 if (trimmedPart.length === 0) return;
+                                 if (/^\n\s*\n$/.test(part)) return;
+                                 
+                                 // Check for title in various formats
+                                 const titleMatch = trimmedPart.match(/^"(.*?)"$/) || 
+                                                   trimmedPart.match(/^「(.*?)」$/) || 
+                                                   trimmedPart.match(/^'(.*?)'$/);
+                                 
+                                 if (titleMatch && isFirstParagraph) {
+                                     processedEnglishStory += `<p class="english"><strong>「${titleMatch[1]}」</strong></p>`;
+                                 } else {
+                                     processedEnglishStory += `<p class="english">${trimmedPart.replace(/\n/g, '<br>')}</p>`;
+                                 }
+                                 isFirstParagraph = false;
+                             });
+                         }
+                         
+                         // Combine Chinese and English stories
+                         return processedChineseStory + processedEnglishStory;
+                     } else {
+                         // If the content is not formatted, process it as a single story
+                         let processedStory = '';
+                         const parts = storyText.split(/(\n\s*\n)/);
+                         let isFirstParagraph = true;
+                         
+                         parts.forEach(part => {
+                             const trimmedPart = part.trim();
+                             if (trimmedPart.length === 0) return;
+                             if (/^\n\s*\n$/.test(part)) return;
+                             
+                             const titleMatch = trimmedPart.match(/^「(.*?)」$/);
+                             if (titleMatch && isFirstParagraph) {
+                                 processedStory += `<p><strong>「${titleMatch[1]}」</strong></p>`;
+                             } else {
+                                 processedStory += `<p>${trimmedPart.replace(/\n/g, '<br>')}</p>`;
+                             }
+                             isFirstParagraph = false;
+                         });
+                         
+                         return processedStory;
+                     }
+                 } else {
+                     console.error("Invalid API response structure:", data);
+                     throw new Error('从API收到了无效的响应结构');
+                 }
+            } catch (error) {
+                console.error("Error calling DeepSeek API:", error);
+                throw error;
+            }
+         }
+
+        // 在JavaScript部分添加一个标志变量
+        let isGeneratingStory = false;
+
+        async function generateStory(event) {
+            // 防止重复生成
+            if (isGeneratingStory) return;
+            isGeneratingStory = true;
+            
+            const name = nameInput.value.trim();
+            const location = locationSelect.value;
+
+            if (!name || !location) {
+                alert("请输入名字和选择地点");
+                isGeneratingStory = false;
+                return;
+            }
+
+            // 隐藏保存按钮，直到故事生成完成
+            const saveButton = document.getElementById('saveAsImageBtn');
+            if (saveButton) {
+                saveButton.style.display = 'none';
+            }
+
+            // Show the story output container with animation
+            storyOutput.style.display = 'block';
+            setTimeout(() => {
+                storyOutput.classList.add('visible');
+            }, 50);
+
+            // Show loading state with percentage animation
+            storyOutput.innerHTML = `
+                <div class="loading" style="font-family: 'Lenyah' !important;">
+                    <div class="loading-text" style="font-family: 'Lenyah' !important;">Generating story</div>
+                    <div class="loading-percentage" style="font-family: 'Lenyah' !important;">1%</div>
+                    <div class="loading-bar">
+                        <div class="loading-bar-fill">
+                            <div class="camera-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Camera body -->
+                                    <rect x="4" y="6" width="16" height="12" rx="2" 
+                                          fill="url(#cameraBodyGradient)"/>
+                                    
+                                    <!-- Main lens -->
+                                    <circle cx="12" cy="12" r="3" 
+                                            fill="url(#cameraLensGradient)"/>
+                                    <circle cx="12" cy="12" r="2.5" 
+                                            stroke="url(#cameraDetailGradient)" 
+                                            stroke-width="0.5"/>
+                                    <circle cx="12" cy="12" r="1.5" 
+                                            fill="url(#cameraDetailGradient)"/>
+                                    
+                                    <!-- Viewfinder -->
+                                    <rect x="16" y="8" width="2" height="2" rx="0.5"
+                                          fill="url(#cameraDetailGradient)"/>
+                                    
+                                    <!-- Shutter button -->
+                                    <circle cx="18" cy="12" r="0.8" 
+                                            fill="url(#cameraDetailGradient)"/>
+                                    
+                                    <!-- Gradient definitions -->
+                                    <defs>
+                                        <linearGradient id="cameraBodyGradient" x1="4" y1="6" x2="20" y2="18" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0%" stop-color="#00FFC8"/>
+                                            <stop offset="25%" stop-color="#80FFE4"/>
+                                            <stop offset="50%" stop-color="#FF006F"/>
+                                            <stop offset="75%" stop-color="#FF80B7"/>
+                                            <stop offset="100%" stop-color="#00FFC8"/>
+                                        </linearGradient>
+                                        
+                                        <linearGradient id="cameraDetailGradient" x1="4" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0%" stop-color="#00FFFF"/>
+                                            <stop offset="50%" stop-color="#FF00FF"/>
+                                            <stop offset="100%" stop-color="#00FFFF"/>
+                                        </linearGradient>
+                                        
+                                        <linearGradient id="cameraLensGradient" x1="9" y1="9" x2="15" y2="15" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0%" stop-color="#00FFFF"/>
+                                            <stop offset="25%" stop-color="#80FFFF"/>
+                                            <stop offset="50%" stop-color="#FF00FF"/>
+                                            <stop offset="75%" stop-color="#FF80FF"/>
+                                            <stop offset="100%" stop-color="#00FFFF"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Get the loading elements
+            const percentageElement = storyOutput.querySelector('.loading-percentage');
+            const barFillElement = storyOutput.querySelector('.loading-bar-fill');
+            
+            // Start the percentage animation
+            let percentage = 1;
+            const percentageInterval = setInterval(() => {
+                // 使用更平滑的进度增长算法
+                if (percentage < 30) {
+                    // 开始时增长较快
+                    percentage += Math.floor(Math.random() * 2) + 1;
+                } else if (percentage < 70) {
+                    // 中间增长适中
+                    percentage += Math.floor(Math.random() * 1.5) + 0.5;
+                } else if (percentage < 90) {
+                    // 后期增长变慢
+                    percentage += Math.floor(Math.random() * 1) + 0.2;
+                } else if (percentage < 98) {
+                    // 接近完成时增长非常慢
+                    percentage += Math.floor(Math.random() * 0.5) + 0.1;
+                } else if (percentage < 99) {
+                    // 99%时几乎停止
+                    percentage = 99;
+                }
+                
+                // 确保不超过99%并取整
+                if (percentage > 99) percentage = 99;
+                const displayPercentage = Math.floor(percentage);
+                
+                percentageElement.textContent = `${displayPercentage}%`;
+                barFillElement.style.width = `${percentage}%`;
+            }, 100);
+            
+            storyGenreDiv.textContent = ''; // Clear previous genre text
+            generateBtn.disabled = true;
+            notebookBack.classList.remove('style-light', 'style-dark'); // Reset styles
+
+            try {
+                // Select a genre randomly from the list
+                const allGenres = ['喜剧', '治愈', '动作', '犯罪', '爱情', '童话', '青春', '悬疑', '恐怖', '惊悚', '幻想', '科幻'];
+                const genreTranslations = {
+                    '喜剧': 'comedy',
+                    '治愈': 'healing',
+                    '动作': 'action',
+                    '犯罪': 'crime',
+                    '爱情': 'romance',
+                    '童话': 'fairy tale',
+                    '青春': 'youth',
+                    '悬疑': 'mystery',
+                    '恐怖': 'horror',
+                    '惊悚': 'thriller',
+                    '幻想': 'fantasy',
+                    '科幻': 'science fiction'
+                };
+                const selectedGenre = allGenres[Math.floor(Math.random() * allGenres.length)];
+                const genreTranslation = genreTranslations[selectedGenre] || selectedGenre;
+                console.log("Client selected genre:", selectedGenre);
+
+                // Display the genre text in English format with Chinese genre and English translation
+                storyGenreDiv.textContent = `${name}'s story style: ${selectedGenre} (${genreTranslation})`;
+
+                // 记录API调用开始时间
+                const apiStartTime = Date.now();
+                
+                // Call API with the selected genre
+                const story = await callDeepSeekAPI(name, location, selectedGenre);
+                
+                // 计算API调用实际耗时
+                const apiDuration = Date.now() - apiStartTime;
+                
+                // 根据API实际耗时调整加载动画
+                clearInterval(percentageInterval);
+                
+                // 如果API调用时间短，添加一个平滑过渡到100%
+                if (apiDuration < 2000) {
+                    // 快速过渡到100%
+                    percentageElement.textContent = '100%';
+                    barFillElement.style.width = '100%';
+                    
+                    // 短延迟后显示故事
+                    setTimeout(() => {
+                        storyOutput.innerHTML = story;
+                        generateBtn.style.display = 'none';
+                        // 显示保存按钮 - 确保故事内容已经加载
+                        if (saveButton && storyOutput.innerHTML.trim() !== '') {
+                            saveButton.style.display = 'inline-block';
+                        }
+                        animateStoryOutput(); // Add animation
+                    }, 300);
+                } else {
+                    // 如果API调用时间长，直接显示故事
+                    percentageElement.textContent = '100%';
+                    barFillElement.style.width = '100%';
+                    storyOutput.innerHTML = story;
+                    generateBtn.style.display = 'none';
+                    // 显示保存按钮 - 确保故事内容已经加载
+                    if (saveButton && storyOutput.innerHTML.trim() !== '') {
+                        saveButton.style.display = 'inline-block';
+                    }
+                    animateStoryOutput(); // Add animation
+                }
+                
+             } catch (error) {
+                 console.error("Error generating story:", error);
+                 clearInterval(percentageInterval);
+                storyOutput.innerHTML = `<p class="error">生成故事时出错: ${error.message}</p>`;
+                generateBtn.style.display = 'inline-block';
+                generateBtn.disabled = false;
+                // 出错时不显示保存按钮
+                if (saveButton) {
+                    saveButton.style.display = 'none';
+                }
+            } finally {
+                // 确保无论成功还是失败，都重置标志
+                isGeneratingStory = false;
+            }
+        }
+
+        function updateLocationSelect() {
+            locationSelect.innerHTML = '<option value="" disabled selected>select a place</option>';
+            const locationNames = {
+                '千厮门大桥': 'Qiansimen Bridge',
+                '李子坝': 'Liziba',
+                '白象居': 'Baixiangju',
+                '长江索道': 'Yangtze River Cableway',
+                '皇冠大扶梯': 'Crown Escalator',
+                '朝天门码头': 'Chaotianmen Dock',
+                '弹子石码头': 'Danzi Stone Dock',
+                '来福士': 'Raffles City',
+                '南滨路': 'Nanbin Road',
+                '老居民楼': 'Old Residential Building'
+            };
+            
+            locations.forEach(location => {
+                const option = document.createElement('option');
+                option.value = location.name;
+                option.textContent = `${location.name} (${locationNames[location.name]})`;
+                locationSelect.appendChild(option);
+            });
+        }
+
+        function updateMoviePoster() {
+            const selectedLocation = locationSelect.value;
+            const moviePoster = document.getElementById('moviePoster');
+            const movieTitle = document.getElementById('movieTitle');
+            const movieQuote = document.getElementById('movieQuote');
+            
+            if (selectedLocation) {
+                const locationData = movieData[selectedLocation];
+                if (locationData) {
+                    movieTitle.textContent = locationData.title;
+                    moviePoster.src = locationData.poster;
+                    movieQuote.textContent = locationData.quote;
+                } else {
+                    // 如果没有电影数据，显示随机台词
+                    const locationQuotes = quotes[selectedLocation];
+                    if (locationQuotes) {
+                        const randomQuote = locationQuotes[Math.floor(Math.random() * locationQuotes.length)];
+                        movieQuote.textContent = randomQuote;
+                    }
+                    movieTitle.textContent = "重庆故事";
+                    moviePoster.src = "assets/images/重庆夜景.jpg";
+                }
+            } else {
+                movieTitle.textContent = "请选择地点";
+                moviePoster.src = "assets/images/重庆夜景.jpg";
+                movieQuote.textContent = "";
+            }
+        }
+
+        function updateBuildingImage() {
+            const selectedLocation = locationSelect.value;
+            const buildingImg = document.getElementById('buildingImg');
+            
+            if (selectedLocation) {
+                const location = locations.find(loc => loc.name === selectedLocation);
+                if (location) {
+                    buildingImg.src = location.image;
+                }
+            } else {
+                buildingImg.src = "assets/images/重庆夜景.jpg";
+            }
+        }
+
+        // 初始化页面
+        updateLocationSelect();
+        locationSelect.addEventListener('change', () => {
+            updateMoviePoster();
+            updateBuildingImage();
+        });
+
+        // Add 3D tilt effect to notebook
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create particles
+            createParticles();
+            
+            // 确保生成按钮正确绑定事件
+            const generateBtn = document.getElementById('generateStoryBtn');
+            if (generateBtn) {
+                // 移除可能存在的旧事件监听器
+                generateBtn.removeEventListener('click', generateStory);
+                // 添加新的事件监听器
+                generateBtn.addEventListener('click', generateStory);
+            }
+        });
+        
+        function createParticles() {
+            const particlesContainer = document.createElement('div');
+            particlesContainer.className = 'particles';
+            document.body.appendChild(particlesContainer);
+            
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random position
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                
+                // Random size
+                const size = Math.random() * 3 + 1;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                // Random animation duration
+                const duration = Math.random() * 10 + 10;
+                particle.style.animationDuration = duration + 's';
+                
+                // Random delay
+                const delay = Math.random() * 5;
+                particle.style.animationDelay = delay + 's';
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Add typing animation to story output
+        function animateStoryOutput() {
+            const paragraphs = storyOutput.querySelectorAll('p');
+            
+            paragraphs.forEach((p, index) => {
+                p.style.opacity = '0';
+                p.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    p.style.opacity = '1';
+                    p.style.transform = 'translateY(0)';
+                }, 100 * (index + 1));
+            });
+        }
+        
+        // 保存故事为图片的函数
+        function saveStoryAsImage() {
+            // 创建一个临时容器来复制故事内容
+            const tempContainer = document.createElement('div');
+            tempContainer.style.position = 'absolute';
+            tempContainer.style.left = '-9999px';
+            tempContainer.style.top = '-9999px';
+            tempContainer.style.width = '800px'; // 固定宽度
+            tempContainer.style.padding = '40px';
+            tempContainer.style.backgroundColor = 'rgba(20, 20, 30, 0.9)';
+            tempContainer.style.border = '1px solid rgba(100, 100, 255, 0.3)';
+            tempContainer.style.borderRadius = '8px';
+            tempContainer.style.boxShadow = '0 0 20px rgba(50, 50, 150, 0.4)';
+            tempContainer.style.color = 'rgba(255, 255, 255, 1)';
+            tempContainer.style.fontFamily = 'var(--quote-font)';
+            
+            // 添加标题
+            const titleDiv = document.createElement('div');
+            titleDiv.style.textAlign = 'center';
+            titleDiv.style.marginBottom = '30px';
+            titleDiv.style.fontSize = '24px';
+            titleDiv.style.fontWeight = 'bold';
+            titleDiv.style.color = 'rgba(0, 255, 200, 0.9)';
+            titleDiv.textContent = '山城 - 手札';
+            tempContainer.appendChild(titleDiv);
+            
+            // 添加故事类型
+            const genreDiv = document.createElement('div');
+            genreDiv.style.textAlign = 'center';
+            genreDiv.style.marginBottom = '20px';
+            genreDiv.style.fontSize = '16px';
+            genreDiv.style.fontStyle = 'italic';
+            genreDiv.style.color = 'rgba(255, 255, 255, 0.8)';
+            genreDiv.textContent = storyGenreDiv.textContent;
+            tempContainer.appendChild(genreDiv);
+            
+            // 复制故事内容
+            const storyContent = storyOutput.cloneNode(true);
+            tempContainer.appendChild(storyContent);
+            
+            // 添加到文档中
+            document.body.appendChild(tempContainer);
+            
+            // 使用html2canvas库将内容转换为图片
+            // 如果库不存在，动态加载
+            if (typeof html2canvas === 'undefined') {
+                const script = document.createElement('script');
+                script.src = 'https://html2canvas.hertzen.com/dist/html2canvas.min.js';
+                script.onload = function() {
+                    captureAndDownload(tempContainer);
+                };
+                document.head.appendChild(script);
+            } else {
+                captureAndDownload(tempContainer);
+            }
+        }
+        
+        function captureAndDownload(container) {
+            // 显示加载提示
+            const saveButton = document.getElementById('saveAsImageBtn');
+            const originalText = saveButton.textContent;
+            saveButton.textContent = '正在生成图片...';
+            saveButton.disabled = true;
+            
+            // 使用html2canvas捕获内容
+            html2canvas(container, {
+                scale: 2, // 提高清晰度
+                useCORS: true,
+                backgroundColor: 'rgba(20, 20, 30, 0.9)',
+                logging: false,
+                onclone: function(clonedDoc) {
+                    // 确保克隆的元素样式正确
+                    const clonedContainer = clonedDoc.querySelector('div');
+                    if (clonedContainer) {
+                        clonedContainer.style.width = '800px';
+                        clonedContainer.style.padding = '40px';
+                    }
+                }
+            }).then(canvas => {
+                // 创建下载链接
+                const link = document.createElement('a');
+                link.download = `山城手札_${new Date().toISOString().slice(0, 10)}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+                
+                // 恢复按钮状态
+                saveButton.textContent = originalText;
+                saveButton.disabled = false;
+                
+                // 移除临时容器
+                document.body.removeChild(container);
+            }).catch(error => {
+                console.error('Error generating image:', error);
+                alert('生成图片时出错，请重试');
+                
+                // 恢复按钮状态
+                saveButton.textContent = originalText;
+                saveButton.disabled = false;
+                
+                // 移除临时容器
+                document.body.removeChild(container);
+            });
+        }
+        
+        // 添加文字粒子效果函数
+        function createTextParticles(element, event) {
+            const rect = element.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            
+            // 创建粒子容器（如果不存在）
+            let particlesContainer = element.querySelector('.particles-container');
+            if (!particlesContainer) {
+                particlesContainer = document.createElement('div');
+                particlesContainer.className = 'particles-container';
+                element.appendChild(particlesContainer);
+            }
+            
+            // 创建多个粒子
+            for (let i = 0; i < 10; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'text-particle';
+                
+                // 随机大小
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // 随机位置偏移
+                const offsetX = (Math.random() - 0.5) * 20;
+                const offsetY = (Math.random() - 0.5) * 20;
+                
+                // 设置粒子位置
+                particle.style.left = `${x + offsetX}px`;
+                particle.style.top = `${y + offsetY}px`;
+                
+                // 随机动画延迟
+                particle.style.animationDelay = `${Math.random() * 0.5}s`;
+                
+                // 添加到容器
+                particlesContainer.appendChild(particle);
+                
+                // 动画结束后移除粒子
+                setTimeout(() => {
+                    if (particle.parentNode === particlesContainer) {
+                        particlesContainer.removeChild(particle);
+                    }
+                }, 2000);
+            }
+        }
+
+        // 确保在DOM加载完成后绑定事件
+        document.addEventListener('DOMContentLoaded', function() {
+            // 绑定输入事件
+            locationSelect.addEventListener('change', handleLocationChange);
+            nameInput.addEventListener('input', handleInputChange);
+            
+            // 绑定翻页按钮事件
+            arrowBtn.addEventListener('click', slidePage);
+            
+            // 绑定返回按钮事件
+            const backArrow = document.querySelector('.back-page-arrow');
+            if (backArrow) {
+                backArrow.addEventListener('click', slideBack);
+            }
+            
+            // 绑定生成故事按钮事件
+            const generateBtn = document.getElementById('generateStoryBtn');
+            if (generateBtn) {
+                // 移除可能存在的旧事件监听器
+                generateBtn.removeEventListener('click', generateStory);
+                // 添加新的事件监听器
+                generateBtn.addEventListener('click', generateStory);
+            }
+            
+            // 绑定保存图片按钮事件
+            const saveAsImageBtn = document.getElementById('saveAsImageBtn');
+            if (saveAsImageBtn) {
+                saveAsImageBtn.addEventListener('click', saveStoryAsImage);
+            }
+        });
+
+        // 移除横屏检测相关代码
+        function checkOrientation() {
+            return;
+        }
+
+        // 移除事件监听
+        window.removeEventListener('orientationchange', checkOrientation);
+        window.removeEventListener('resize', checkOrientation);
+    </script>
+
+</body>
+
+</html>    
